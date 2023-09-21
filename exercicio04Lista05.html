@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FREQUENCIA ALUNO</title>
+</head>
+<body>
+    
+    <span>Informe a frequencia:</span>
+    <input type="text" id="input_frequencia">
+<br>
+    <button onclick="calcularFrequencia()">Analisar Frequencia</button>
+
+    <div id="imgFrequencia">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function calcularFrequencia(){
+        var frequencia = Number(input_frequencia.value);
+
+        if (frequencia < 50) {
+            imgFrequencia.innerHTML= `
+            <img style="width: 500px;" src="https://images.freeimages.com/images/premium/previews/2505/25057705-happy-tourist.jpg" alt="Turista feliz segurando globo">
+            `;
+        }else{
+            imgFrequencia.innerHTML= `
+            <img style="width: 500px;" src="https://i.pinimg.com/474x/7d/9a/bd/7d9abdee2f26c175b8e9f1b49c69636c.jpg" alt="Emoji estudioso segurando livros">
+            `;
+        }
+
+        
+    }
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de Controle de Estoque</title>
+</head>
+
+<body>
+    <span>Informe qual é o estoque atual do seu produto?</span>
+    <input type="text" id="input_estoque_atual">
+    <br>
+
+    <span>Quantas unidades foram vendidas hoje?</span>
+    <input type="text" id="input_unid_vend">
+    <br>
+
+    <span>Quantas unidades foram adicionadas ao estoque hoje?</span>
+    <input type="text" id="input_unid_add">
+    <br>
+
+    <button onclick="analisarEstoque()">Analisar Estoque</button>
+    <br><br>
+
+    <div id="msg_estoque">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function analisarEstoque(){
+
+        var estoqueAtual = Number(input_estoque_atual.value);
+        var unidVend = Number(input_unid_vend.value);
+        var unidAdd = Number(input_unid_add.value);
+
+        estoqueAtual = (estoqueAtual - unidVend) + unidAdd;
+
+        if (estoqueAtual < 10) {
+
+            msg_estoque.innerHTML = `
+                Estoque baixo! Restam apenas ${estoqueAtual} unidades.
+            `
+        }else{
+
+            msg_estoque.innerHTML = `
+                Estoque suficiente! Temos ${estoqueAtual} unidades em estoque.
+            `
+        }
+    }
+</script>

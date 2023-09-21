@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMPERATURA</title>
+</head>
+<body>
+    
+    <span>Informe a temperatura do ambiente:</span>
+    <input type="text" id="input_temperatura">
+    <br>
+
+    <button onclick="verificaClima()">Verificar Clima</button>
+    <br>
+    <div id="mensagem_verficacao"></div>
+</body>
+</html>
+
+<script>
+    function verificaClima(){
+        var temperatura = input_temperatura.value;
+
+        if (temperatura < 10) {
+            mensagem_verficacao.innerHTML = `
+            <br>
+            Temperatura apropriada para conservar alimento
+            <br><br>
+            <img style="width: 500px;" src="https://conteudo.imguol.com.br/c/entretenimento/4d/2020/06/01/saber-quais-sao-os-grupos-de-verduras-legumes-e-frutas-ajuda-a-nao-ficar-na-mao-na-hora-de-cozinhar-1591034988656_v2_900x506.jpg" alt="legumes em geral em bom estado">
+            `;
+        }else{
+            mensagem_verficacao.innerHTML = `
+            <br>
+            Temperatura Inapropriada para conservar alimento
+            <br><br>
+            <img style="width: 500px;" src="https://img.freepik.com/fotos-premium/alimentos-estragados-e-estragados-com-mofo-macas-pimentoes-queijo-duro-e-banan-em-fundo-cinza-close-up_130716-3092.jpg" alt="legumes em geral em bom estado">
+            `;
+        }
+    }
+</script>
